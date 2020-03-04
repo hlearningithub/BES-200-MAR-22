@@ -5,7 +5,11 @@ VisualStudioVersion = 16.0.29613.14
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LibraryApi", "LibraryApi\LibraryApi.csproj", "{B7DE0D27-79BB-4D29-9FC8-7F511C42A476}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibraryApiIntegrationTest", "LibraryApiIntegrationTest\LibraryApiIntegrationTest.csproj", "{52026AEE-B36E-4E6D-A8D8-F98F09413B26}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LibraryApiIntegrationTest", "LibraryApiIntegrationTest\LibraryApiIntegrationTest.csproj", "{52026AEE-B36E-4E6D-A8D8-F98F09413B26}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApiClient", "ApiClient\ApiClient.csproj", "{16695618-96D6-4FFB-ADCD-E722E21F3492}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RabbitMqUtils", "bes200-rabbitmqutils\RabbitMqUtils.csproj", "{B63D7D06-5D94-4EF4-B783-D3AF42908171}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +25,14 @@ Global
 		{52026AEE-B36E-4E6D-A8D8-F98F09413B26}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{52026AEE-B36E-4E6D-A8D8-F98F09413B26}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{52026AEE-B36E-4E6D-A8D8-F98F09413B26}.Release|Any CPU.Build.0 = Release|Any CPU
+		{16695618-96D6-4FFB-ADCD-E722E21F3492}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16695618-96D6-4FFB-ADCD-E722E21F3492}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{16695618-96D6-4FFB-ADCD-E722E21F3492}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16695618-96D6-4FFB-ADCD-E722E21F3492}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B63D7D06-5D94-4EF4-B783-D3AF42908171}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B63D7D06-5D94-4EF4-B783-D3AF42908171}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B63D7D06-5D94-4EF4-B783-D3AF42908171}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B63D7D06-5D94-4EF4-B783-D3AF42908171}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
