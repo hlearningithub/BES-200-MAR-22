@@ -24,6 +24,44 @@ namespace LibraryApi.Controllers
             Processor = processor;
         }
 
+        [HttpPost("reservations/approved")]
+        [ValidateModel]
+        public async Task<ActionResult> ReservationApproved([FromBody] GetReservationItemResponse req)
+        {
+            var reservation = await Context.Reservations.Where(r => r.Id == req.Id).SingleOrDefaultAsync();
+            if (reservation == null)
+            {
+                return BadRequest("No pending reservation");
+            }
+            else
+            {
+                reservation.Status = ReservationStatus.Approved;
+                await Context.SaveChangesAsync();
+                return Accepted();
+            }
+        }
+
+        [HttpPost("reservations/cancelled")]
+        [ValidateModel]
+        public async Task<ActionResult> ReservationCancelled([FromBody] GetReservationItemResponse req)
+        {
+            var reservation = await Context.Reservations.Where(r => r.Id == req.Id).SingleOrDefaultAsync();
+            if (reservation == null)
+            {
+                return BadRequest("No pending reservation");
+            }
+            else
+            {
+                reservation.Status = ReservationStatus.Cancelled;
+                await Context.SaveChangesAsync();
+                return Accepted();
+            }
+
+
+        }
+
+
+
         [HttpPost("reservations")]
         [ValidateModel]
         public async Task<ActionResult> AddReservation([FromBody] PostReservationRequest reservation)
@@ -59,7 +97,7 @@ namespace LibraryApi.Controllers
             return Ok(response);
         }
 
-        [HttpPost("reservations/pending")]
+        [HttpGet("reservations/pending")]
         public async Task<ActionResult> GetPendingReservations()
         {
             var response = new HttpCollection<GetReservationItemResponse>();
@@ -71,7 +109,7 @@ namespace LibraryApi.Controllers
             return Ok(response); 
         }
 
-        [HttpPost("reservations/approved")]
+        [HttpGet("reservations/approved")]
         public async Task<ActionResult> GetApprovedReservations()
         {
             var response = new HttpCollection<GetReservationItemResponse>();
@@ -84,7 +122,7 @@ namespace LibraryApi.Controllers
         }
 
 
-        [HttpPost("reservations/cancelled")]
+        [HttpGet("reservations/cancelled")]
         public async Task<ActionResult> GetCancelledReservations()
         {
             var response = new HttpCollection<GetReservationItemResponse>();

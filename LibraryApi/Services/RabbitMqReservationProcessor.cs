@@ -21,4 +21,4 @@ namespace LibraryApi.Services
             Manager.Publish(reservation, "", "direct", "reservations");
         }
     }
-}
+} 
